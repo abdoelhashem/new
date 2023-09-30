@@ -24,6 +24,7 @@ fetch("game.json").then((res) => {
     let result = res.json();
     return result;
 }).then((content) => {
+    aleart(`data is : moves : ${content[0]["moves"].join(" , ")}\n${content[1]["songers"].join(" , ")}\n${content[2]["languages"].join(" , ")}`);
     let title = content[Math.trunc(Math.random() * content.length)];
     wordfrom.innerHTML = Object.keys(title)[0];
     let word = title[Object.keys(title)[0]][Math.trunc(Math.random() * title[Object.keys(title)[0]].length)];
